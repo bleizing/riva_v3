@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.activity.SplashScreen">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/logo_riva_glow"/>
+
+    <TextView
+        android:id="@+id/tv_sahabat_diabetesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/img_logo"
+        android:layout_marginTop="125dp"
+        android:text="@string/sahabat_diabetesi"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/hijau"
+        android:fontFamily="@font/montserrat"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_sahabat_diabetesi"
+        android:text="@string/mencegah_dan_merawat_luka"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/biru_tua"
+        android:fontFamily="@font/montserrat"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

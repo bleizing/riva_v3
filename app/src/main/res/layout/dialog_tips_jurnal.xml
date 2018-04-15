@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tips_riva"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/cardview_dark_background" >
+    </View>
+
+    <!--Linear > 140mg/dl-->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="20dp"
+       android:layout_marginEnd="20dp"
+       android:orientation="vertical"
+       android:visibility="visible">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Gula Darah Anda di atas 140mg/dl"
+           android:textSize="16sp"
+           android:textColor="@color/cardview_dark_background"
+           android:textStyle="bold"
+           android:fontFamily="@font/montserrat"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:orientation="vertical">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="- Awas Gula Darah Tinggi"
+               android:textSize="14sp"
+               android:textColor="@color/cardview_dark_background"
+               android:fontFamily="@font/montserrat"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="- Anjuran Makanan dan Suplemen"
+               android:textSize="14sp"
+               android:textColor="@color/cardview_dark_background"
+               android:fontFamily="@font/montserrat"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="- Anjuran Olah Raga"
+               android:textSize="14sp"
+               android:textColor="@color/cardview_dark_background"
+               android:fontFamily="@font/montserrat"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="- Anjuran Gaya Hidup"
+               android:textSize="14sp"
+               android:textColor="@color/cardview_dark_background"
+               android:fontFamily="@font/montserrat"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="- Jaga Emosi"
+               android:textSize="14sp"
+               android:textColor="@color/cardview_dark_background"
+               android:fontFamily="@font/montserrat"/>
+
+       </LinearLayout>
+
+   </LinearLayout>
+    <!--End of Linear > 140mg/dl-->
+
+    <!--Linear < 70mg/dl-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gula Darah Andah di bawah 70mg/dl"
+            android:textSize="16sp"
+            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Awas Gula Darah Rendah"
+                android:textSize="14sp"
+                android:textColor="@color/cardview_dark_background"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Anjuran Makanan dan Suplemen"
+                android:textSize="14sp"
+                android:textColor="@color/cardview_dark_background"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Anjuran Olah Raga"
+                android:textSize="14sp"
+                android:textColor="@color/cardview_dark_background"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Anjuran Gaya Hidup"
+                android:textSize="14sp"
+                android:textColor="@color/cardview_dark_background"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--End of Linear < 70mg/dl-->
+
+    <!--Linear < 70mg/dl-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gula Darah Andah 90mg/dl"
+            android:textSize="16sp"
+            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Awas Gula Darah Normal"
+                android:textSize="14sp"
+                android:textColor="@color/cardview_dark_background"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--End of Linear < 70mg/dl-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/cardview_dark_background" >
+    </View>
+
+    <TextView
+        android:id="@+id/tv_tutup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        android:text="TUTUP"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="15sp"
+        android:fontFamily="@font/montserrat"/>
+
+</LinearLayout>

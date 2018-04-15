@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Riva</string>
+
+    <string name="sahabat_diabetesi">Sahabat Diabetesi</string>
+    <string name="mencegah_dan_merawat_luka">Mencegah dan Merawat Luka</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="homecare">HOMECARE</string>
+    <string name="bonus_refferal">BONUS REFFERAL</string>
+    <string name="untuk_anda">UNTUK ANDA</string>
+    <string name="artikel">ARTIKEL</string>
+    <string name="perawatan_luka">PERAWATAN LUKA</string>
+    <string name="perawatan_kaki">PERAWATAN KAKI</string>
+    <string name="edukasi_article">A R T I K E L</string>
+    <string name="edukasi_perawatan_luka">PERAWATAN LUKA</string>
+    <string name="edukasi_perawatan_kaki">PERAWATAN KAKI</string>
+    <string name="previous"><![CDATA[<]]></string>
+    <string name="next"><![CDATA[>]]></string>
+    <string name="tanda_seru">!</string>
+
+    <string name="isi_homecare1">Rumat adalah Jaringan Rumah Perawatan Luka yang direncanakan berada tersebar di seluruh wilayah Indonesia. Didirikan atas dasar kepedulian dan keprihatinan terhadap banyaknya pendertia penyakit diabetes (diabetisi) yang harus diamputasi anggota tubuhnya ketika terjadi luka yang menahun (kronis). Seolah-olah amputasi adalah satu-satunya cara agar luka tidak menyebar ke bagian tubuh yang lain. Padahal amputasi bias dicegah dan dihindari ketika luka tersebut ditangani secara tepat. Karena sesungguhnya tubuh kita adalah system yang sangat hebat, yang mampu mengobati dirinya sendiri (auto recovery), dan kami pada dasarnya hanya memfasilitasi dan memastikan agar auto recovery itu bias berlangsung dengan baik. Jadi, luka pada diabetisi bias tersembuhkan. </string>
+    <string name="isi_homecare2">Di rumat penderita luka, apapun jenisnya, akan ditangani dan dirawat dengan metode modern wound dressing yang sudah teruji secara internasional sehingga dapat tercapai kesembuhan yang terprediksi waktunya. Metode perawatan luka ini menggunakan metode balutan lembab (moist wound dressing) dan bahan tropical terapi yang tepat untuk masing-masing jenis luka.</string>
+
+    <string name="judul_perawatan_kaki">PERAWATAN KAKI</string>
+    <string name="isi_perawatan_kaki1">Mencegah terjadinya luka pada kaki Diabetesi</string>
+    <string name="isi_perawatan_kaki2">Cek kondisi kaki setiap hari, terutama setelah dari perjalanan atau berdiri lama. Perhatikan kondisi telapak dan sela-sela jari. Wasdpada jika terdapat bengkak, bengkok, kemerahan, penebalan atau retakan pada kuit. Gunakan cermin kecil sebagai alat bantuBiasakan mencuci kaki dengan bersih, usahakan dengan air dingin yang mengalir , jangan gunaan air panas. Seka setelahnya sampai benar benar kering, terutama di sela-sela jari. Jangan merendam terlalu lama
+Mengusahakan kaki dalam kondisi lembab, bukan kering atau basah. Gunakan pelembab jika diperlukan, selain pada sela-sela kaki. Tetap menggunakan dan menggerakkan kaki dan jari-jarinya setiap hari. Setelah berdiri lama, istirahatkan kaki dengan meluruskannya dan diganjal bantal. Selalu menggunakan alas kaki yang lembut dan empuk. baik di dalam maupun di luar rumah. jangan menggunakan yang terlalu pas/sempit. dan Pastikan di dalam alas kaki bersih dari kerikil dan benda tajam lain
+Kontrol selalu kadar gula darah. Jika terdapat tanda tanda luka segera dibersihan dan ditutup dengan kassa an segera kunjungi RUMAT</string>
+
+    <string name="isi_perawatan_kaki3">Gunakan alas kaki yang tertutup ketika keluar rumah Bantalan / Sol maksimal 5 cm. Jangan gunakan alas kaki  dengan ujung sempit. Gunakan kaos kaki berbahan kaos yang menyerap keringat. Ganti kaos kaki setiap hari.</string>
+    <string name="isi_perawatan_kaki4">Penyempitan pembuluh darah. Penderita diabetes dengan penyumbatan pembuluh darah di kaki memiliki resiko lebih tinggi untuk mengalami luka, mengalami infeksi dan masalah pada proses penyembuhan. Pembuluh darah yang menyempit membuat darah yang berfungsi mengangkut oksigen dan nutrisi lebih sulit untuk sampai ke luka. Terhambatnya oksigen dan nutrisi ini pada akhirnya berakibat pada lambannya penyembuhan luka dan meningkatnya resiko infeksi pada penderita diabetes.</string>
+
+    <string name="judul_diabetes">PERAWATAN LUKA DIABETES</string>
+    <string name="isi_diabetes1">Dua masalah umum yang dialami oleh penderita diabetes yaitu memiliki resiko yang lebih tinggi mengalami perlukaan dan sulitnya mencapai kesembuhan luka. Hal ini terjadi akibat beberapa hal pada diabetes:</string>
+    <string name="isi_diabetes2">Kerusakan saraf (neuropati). Hal ini ditandai dengan tidak merasakan sakitnya luka sampai terjadi perburukan dan infeksi.</string>
+    <string name="isi_diabetes3">Sistem kekebalan tubuh yang lemah. Ketika pertahanan alami tubuh menurun, bakan luka kecil dapat terinfeksi dan menjadi lebih besar.</string>
+    <string name="isi_diabetes4">Penyempitan pembuluh darah. Penderita diabetes dengan penyumbatan pembuluh darah di kaki memiliki resiko lebih tinggi untuk mengalami luka, mengalami infeksi dan masalah pada proses penyembuhan. Pembuluh darah yang menyempit membuat darah yang berfungsi mengangkut oksigen dan nutrisi lebih sulit untuk sampai ke luka. Terhambatnya oksigen dan nutrisi ini pada akhirnya berakibat pada lambannya penyembuhan luka dan meningkatnya resiko infeksi pada penderita diabetes.</string>
+</resources>

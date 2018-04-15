@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bleizing.riva">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAtLkDODapTKXloNR2fcAtpKcTN2FOYdoA" />
+
+        <activity android:name=".activity.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.HomecareActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.RumatActivity" />
+        <activity android:name=".activity.DressingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.SuplemenActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.EdukasiActivity" />
+        <activity android:name=".activity.TrainingActivity" />
+        <activity android:name=".activity.BonusReferensiActivity" />
+        <activity android:name=".activity.JurnalGdsActivity" />
+    </application>
+
+</manifest>

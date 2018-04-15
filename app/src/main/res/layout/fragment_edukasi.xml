@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.EdukasiFragment">
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/bulb"/>
+        
+        <TextView
+            android:id="@+id/tv_article"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/border_list"
+            android:text="@string/edukasi_article"
+            android:textSize="16sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_perawatan_luka"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/border_list"
+            android:text="@string/edukasi_perawatan_luka"
+            android:textSize="16sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_perawatan_kaki"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/border_list"
+            android:text="@string/edukasi_perawatan_kaki"
+            android:textSize="16sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"/>
+        
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_chat"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/chat_riva"/>
+
+</RelativeLayout>

@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.RegistrasiFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Silahkan Isi Data Form Berikut :"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Nama Lengkap"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Tanggal Lahir"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Tanggal/Jam Kunjungan"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="15dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_7"
+                android:background="@color/hijau"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Email"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round"
+            android:layout_marginTop="15dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Nomor HP"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat"
+                android:backgroundTint="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTER"
+                android:textColor="@color/cardview_light_background"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@drawable/border_round_button"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

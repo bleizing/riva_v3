@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.activity.TrainingActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/linear_training"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginBottom="-30dp"
+            android:src="@drawable/career_hero_1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/hijau"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRAINING"
+                android:textColor="@color/cardview_light_background"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relative_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_foto_training"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:src="@drawable/nurse"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_foto_training"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Training Perawatan Luka"
+                            android:textColor="@color/biru_muda"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luka Diabetes, Luka Kanker"
+                            android:textColor="@color/hijau"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luka Infeksi, Luka Vena, Luka Arteri"
+                            android:textColor="@color/hijau"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Biaya Rp. 2.500.000/orang"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relative_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_foto_training1"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:src="@drawable/griley"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_foto_training1"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Training Perawatan Luka"
+                            android:textColor="@color/biru_muda"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luka Diabetes, Luka Kanker"
+                            android:textColor="@color/hijau"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luka Infeksi, Luka Vena, Luka Arteri"
+                            android:textColor="@color/hijau"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/montserrat"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Biaya Rp. 2.500.000/orang"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/montserrat"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

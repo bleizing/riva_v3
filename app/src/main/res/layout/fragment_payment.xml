@@ -1,0 +1,177 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.PaymentFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@color/hijau"
+        android:text="PERAWAT TERSEDIA"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lakukan Pembayaran"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/border_list_hitam">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perkiraan Biaya"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Rp. 500.000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:padding="5dp"
+            android:background="@drawable/border_list_hitam">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uang Muka"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Rp. 100.000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/montserrat" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Opsi Pembayaran"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/rg_pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_cc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_list_hitam"
+                    android:buttonTint="@color/cardview_dark_background"
+                    android:checked="false"
+                    android:text="Credit Card"
+                    android:fontFamily="@font/montserrat"/>
+
+                <RadioButton
+                    android:id="@+id/rb_ib"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_list_hitam"
+                    android:buttonTint="@color/cardview_dark_background"
+                    android:checked="false"
+                    android:text="INTERNET BANKING"
+                    android:fontFamily="@font/montserrat"/>
+
+                <RadioButton
+                    android:id="@+id/rb_sb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_list_hitam"
+                    android:buttonTint="@color/cardview_dark_background"
+                    android:checked="false"
+                    android:text="SMS BANKING"
+                    android:fontFamily="@font/montserrat"/>
+
+                <RadioButton
+                    android:id="@+id/rb_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_list_hitam"
+                    android:buttonTint="@color/cardview_dark_background"
+                    android:checked="false"
+                    android:text="TRANSFER ANTAR BANK"
+                    android:fontFamily="@font/montserrat"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <!--Order-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/btn_bayar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_round_button"
+                android:text="BAYAR"
+                android:textSize="16sp"
+                android:textColor="@color/cardview_light_background"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+        <!--End of Order-->
+
+    </LinearLayout>
+
+</LinearLayout>

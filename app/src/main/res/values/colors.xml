@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0037ff</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ff0004</color>
+    
+    <color name="biru_hijau">#17b6ee</color>
+    <color name="hijau">#48d29f</color>
+    <color name="biru_muda">#19aded</color>
+    <color name="biru_tua">#2f8cdc</color>
+</resources>

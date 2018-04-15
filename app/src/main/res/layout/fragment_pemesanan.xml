@@ -1,0 +1,263 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.PemesananFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@color/hijau"
+        android:text="PEMESANAN SUKSES"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:background="@drawable/gradient_biru_hijau"
+        android:orientation="vertical">
+
+        <!--Linear Perawat-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE PERAWAT"
+                android:textColor="@color/cardview_light_background"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/img_perawat"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_marginTop="-25dp"
+                    android:src="@drawable/griley" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/img_perawat"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Perawat"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perawat"
+                        android:textColor="@color/cardview_light_background"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!--End of Linear Perawat-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/cardview_light_background" >
+        </View>
+
+        <!--Linear Info Perawat-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:text="Umur"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="36 Tahun"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pengalaman"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16 Tahun"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:text="Spesialis"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diabetes"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--End of Linear Info Perawat-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/cardview_light_background" >
+        </View>
+
+        <!--Linear Jadwal-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hari/Tanggal Kunjungan :"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Senin, 5 Maret 2018"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Alamat Kunjungan :"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jalan-in aja dulu"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jakarta"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+        <!--End of Linear Jadwal-->
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,526 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.fragment.BookingFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:text="FORM PEMESANAN HOMECARE"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/montserrat"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <!--Nama Lengkap-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="25dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Nama Lengkap"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_6"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of Nama Lengkap-->
+
+            <!--Tanggal Lahir-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Tanggal Lahir(dd/mm/yyyy)"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_7"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of Tanggal Lahir-->
+
+            <!--Foto Luka-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Foto Luka"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_6"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of Foto Luka-->
+
+            <!--Jadwal-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jadwal"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/icon_7"
+                    android:background="@color/hijau"/>
+
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="dd/mm/yyyy"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:text="dd/mm/yyyy"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/colorPrimaryDark"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/icon_11"
+                    android:background="@color/hijau" />
+
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="00:00"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <!--<TextView-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:text="00:00"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textColor="@color/colorPrimaryDark"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+            </LinearLayout>
+            <!--End of Jadwal-->
+
+            <!--Lokasi-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Lokasi"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_5"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of Lokasi-->
+
+            <!--Perawat-->
+            <LinearLayout
+                android:id="@+id/linear_perawat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Pilih Perawat"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_9"
+                    android:background="@color/hijau" />
+
+            </LinearLayout>
+            <!--End of Perawat-->
+
+            <!--Laki-Laki-->
+            <LinearLayout
+                android:id="@+id/linear_laki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round"
+                android:visibility="gone">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:text="Laki-Laki"
+                    android:textSize="12sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_9"
+                    android:background="@color/hijau" />
+
+            </LinearLayout>
+            <!--End of Laki-Laki-->
+
+            <!--Perempuan-->
+            <LinearLayout
+                android:id="@+id/linear_perempuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round"
+                android:visibility="gone">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:text="Perempuan"
+                    android:textSize="12sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_9"
+                    android:background="@color/hijau" />
+
+            </LinearLayout>
+            <!--End of Perempuan-->
+
+            <!--No Telp-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Nomor HP/Tel. Rumah Pasien"
+                    android:inputType="number"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_10"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of No Telp-->
+
+            <!--Kode Referensi-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/border_round">
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Upload Foto Luka"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:layout_gravity="center_vertical"
+                    android:hint="Kode Referensi"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/montserrat"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/icon_13"
+                    android:background="@color/hijau"/>
+
+            </LinearLayout>
+            <!--End of Kode Referensi-->
+
+            <!--Order-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp">
+
+                <Button
+                    android:id="@+id/btn_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_round_button"
+                    android:text="ORDER"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/montserrat"/>
+
+            </LinearLayout>
+            <!--End of Order-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

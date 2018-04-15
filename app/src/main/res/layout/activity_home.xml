@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgorund_polos"
+    tools:context="bleizing.riva.activity.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/img_login"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/icon_login"/>
+
+        <ImageView
+            android:id="@+id/img_edukasi"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_edukasi"/>
+
+        <ImageView
+            android:id="@+id/img_jurnal_gds"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_jurnal_gds"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_1"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageView
+            android:id="@+id/img_lokasi_rumat"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/icon_lokasi"/>
+
+
+        <ImageView
+            android:id="@+id/img_homecare"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_hc"/>
+
+        <ImageView
+            android:id="@+id/img_dressing"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_dressing"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_2"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/img_suplemen"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/icon_suplemen"/>
+
+        <ImageView
+            android:id="@+id/img_training"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_training"/>
+
+        <ImageView
+            android:id="@+id/img_bonus_referensi"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/icon_bonus"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_chat"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/chat_riva"
+        android:layout_marginBottom="20dp"/>
+</RelativeLayout>

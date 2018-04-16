@@ -15,6 +15,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,8 +36,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
+import bleizing.riva.MyClickListener;
 import bleizing.riva.R;
+import bleizing.riva.RecyclerTouchListener;
 import bleizing.riva.activity.RumatActivity;
+import bleizing.riva.adapter.RumatAdapter;
+import bleizing.riva.model.Lokasi;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,9 +54,14 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
 
 
     GoogleMap mMap;
-    private Double lat, lng;
+//    private Double lat, lng;
 
-    private LocationManager locationManager;
+//    private LocationManager locationManager;
+
+    private LatLng latLng;
+
+    private ArrayList<Lokasi> lokasiArrayList;
+    private RumatAdapter rumatAdapter;
 
     public RumatFragment() {
         // Required empty public constructor
@@ -58,11 +71,21 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        lat = -6.175206;
-        lng = 106.827131;
+//        lat = -6.175206;
+//        lng = 106.827131;
+//
+//        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+//        getCurrentLocation();
 
-        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        getCurrentLocation();
+        lokasiArrayList = Model.getLokasiArrayList();
+        if (lokasiArrayList == null) {
+            lokasiArrayList = new ArrayList<>();
+        }
+
+        latLng = Model.getLatLng();
+        if (latLng == null) {
+            latLng = new LatLng(-6.175206,106.827131);
+        }
     }
 
     @Override
@@ -83,21 +106,41 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        RelativeLayout relative_1 = (RelativeLayout) getActivity().findViewById(R.id.relative_1);
-        relative_1.setOnClickListener(new View.OnClickListener() {
+        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.rumat_recycler_view);
+        rumatAdapter = new RumatAdapter(lokasiArrayList, getContext());
+        recyclerView.setAdapter(rumatAdapter);
+        rumatAdapter.notifyDataSetChanged();
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new MyClickListener() {
             @Override
-            public void onClick(View view) {
-                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+            public void onClick(View view, int position) {
+                Lokasi lokasi = rumatAdapter.getLokasiArrayList().get(position);
+                ((RumatActivity) getActivity()).changeToDetailRumatFragment(lokasi);
             }
-        });
 
-        RelativeLayout relative_2 = (RelativeLayout) getActivity().findViewById(R.id.relative_2);
-        relative_2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+            public void onLongClick(View view, int position) {
+
             }
-        });
+        }));
+
+//        RelativeLayout relative_1 = (RelativeLayout) getActivity().findViewById(R.id.relative_1);
+//        relative_1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+//            }
+//        });
+//
+//        RelativeLayout relative_2 = (RelativeLayout) getActivity().findViewById(R.id.relative_2);
+//        relative_2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ((RumatActivity) getActivity()).changeToDetailRumatFragment();
+//            }
+//        });
     }
 
     @Override
@@ -116,18 +159,18 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
 //        LatLng b2 = new LatLng(-6.180150, 106.875021);
 //        mMap.addMarker(new MarkerOptions().position(b2).title("Mobil").icon(icon));
 //
-        LatLng b3 = new LatLng(-6.176712, 106.873415);
+//        LatLng b3 = new LatLng(-6.176712, 106.873415);
 //        mMap.addMarker(new MarkerOptions().position(b3).title("Motor").icon(icon));
 //
-        LatLng b4 = new LatLng(-6.175871, 106.876963);
+//        LatLng b4 = new LatLng(-6.175871, 106.876963);
 
 //        mMap.addMarker(new MarkerOptions().position(b4).title("Kerete Bayi").icon(icon));
 
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(b1));
 //        updateBarangLokasi();
 
-        mMap.addMarker(new MarkerOptions().position(b3).title("Rumat").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-        mMap.addMarker(new MarkerOptions().position(b4).title("Rumat").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+//        mMap.addMarker(new MarkerOptions().position(b3).title("Rumat").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+//        mMap.addMarker(new MarkerOptions().position(b4).title("Rumat").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
 
         mMap.setMinZoomPreference(10.0f);
         mMap.setMaxZoomPreference(20.0f);
@@ -155,65 +198,62 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
 //        lng = location.getLongitude();
     }
 
-    private void getCurrentLocation() {
-        if (locationManager != null) {
-            if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
-            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if (location != null) {
-                lat = location.getLatitude();
-                lng = location.getLongitude();
+//    private void getCurrentLocation() {
+//        if (locationManager != null) {
+//            if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                // TODO: Consider calling
+//                //    ActivityCompat#requestPermissions
+//                // here to request the missing permissions, and then overriding
+//                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//                //                                          int[] grantResults)
+//                // to handle the case where the user grants the permission. See the documentation
+//                // for ActivityCompat#requestPermissions for more details.
+//                return;
+//            }
+//            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//            if (location != null) {
+//                lat = location.getLatitude();
+//                lng = location.getLongitude();
+//
+////                getAddress();
+//            }
+//        }
+//        if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
+//        }
+//        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
+//    }
 
-//                getAddress();
-            }
-        }
-        if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
-        }
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 5000, 10, locationListener);
-    }
-
-    private android.location.LocationListener locationListener = new android.location.LocationListener() {
-        @Override
-        public void onLocationChanged(Location location) {
-            lat = location.getLatitude();
-            lng = location.getLongitude();
-
-//            getAddress();
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-            startActivity(intent);
-        }
-    };
+//    private android.location.LocationListener locationListener = new android.location.LocationListener() {
+//        @Override
+//        public void onLocationChanged(Location location) {
+//            lat = location.getLatitude();
+//            lng = location.getLongitude();
+//
+////            getAddress();
+//        }
+//
+//        @Override
+//        public void onStatusChanged(String provider, int status, Bundle extras) {
+//
+//        }
+//
+//        @Override
+//        public void onProviderEnabled(String provider) {
+//
+//        }
+//
+//        @Override
+//        public void onProviderDisabled(String provider) {
+//            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//            startActivity(intent);
+//        }
+//    };
 
     private void setCenterPoint() {
         if (mMap != null) {
-            if (lat != 0.0 && lng != 0.0) {
-                LatLng latLng = new LatLng(lat, lng);
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                mMap.animateCamera( CameraUpdateFactory.zoomTo( 12.0f ) );
-            }
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            mMap.animateCamera( CameraUpdateFactory.zoomTo( 12.0f ) );
         }
     }
 }

@@ -46,6 +46,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_rumat_cabang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cabang Jakarta Timur"
@@ -53,7 +54,9 @@
                 android:textStyle="bold"
                 android:textSize="14sp"
                 android:fontFamily="@font/montserrat"/>
+
             <TextView
+                android:id="@+id/tv_rumat_klinik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rosy Klinik Pulomas"
@@ -190,8 +193,7 @@
         android:paddingEnd="100dp"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-        android:background="@color/biru_muda"
-        android:onClick="changeToRegistrasiFragment">
+        android:background="@color/biru_muda">
 
         <ImageView
             android:layout_width="25dp"

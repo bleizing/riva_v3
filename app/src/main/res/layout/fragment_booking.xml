@@ -48,6 +48,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_nama"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
@@ -90,6 +91,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_tgl_lahir"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
@@ -132,6 +134,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_foto_luka"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
@@ -190,6 +193,7 @@
                     android:background="@color/hijau"/>
 
                 <EditText
+                    android:id="@+id/edit_jadwal_tgl"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -218,6 +222,7 @@
                     android:background="@color/hijau" />
 
                 <EditText
+                    android:id="@+id/edit_jadwal_waktu"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -260,6 +265,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_lokasi"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
@@ -433,6 +439,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_no_telp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"
@@ -476,6 +483,7 @@
                 <!--android:fontFamily="@font/montserrat"/>-->
 
                 <EditText
+                    android:id="@+id/edit_kode_referensi"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.9"

@@ -61,110 +61,117 @@
         android:layout_marginEnd="20dp"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/relative_1"
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/relative_1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/img_rumat"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:src="@drawable/sansumdiabetes"/>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_toEndOf="@id/img_rumat"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginStart="10dp">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Cabang Jakarta Timur"-->
+                    <!--android:textColor="@color/hijau"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Rosy Klinik Rawamangun"-->
+                    <!--android:textColor="@color/biru_muda"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text=">"-->
+                <!--android:textColor="@color/biru_muda"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="25sp"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/relative_2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/img_rumat1"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:src="@drawable/sansumdiabetes"/>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_toEndOf="@id/img_rumat1"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginStart="10dp">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Cabang Jakarta Timur"-->
+                    <!--android:textColor="@color/hijau"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Rosy Klinik Pulomas"-->
+                    <!--android:textColor="@color/biru_muda"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:text=">"-->
+                <!--android:textColor="@color/biru_muda"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="25sp"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
+
+        <!--</RelativeLayout>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rumat_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/img_rumat"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/sansumdiabetes"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_toEndOf="@id/img_rumat"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cabang Jakarta Timur"
-                    android:textColor="@color/hijau"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/montserrat"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rosy Klinik Rawamangun"
-                    android:textColor="@color/biru_muda"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/montserrat"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text=">"
-                android:textColor="@color/biru_muda"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:fontFamily="@font/montserrat"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relative_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <ImageView
-                android:id="@+id/img_rumat1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/sansumdiabetes"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_toEndOf="@id/img_rumat1"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cabang Jakarta Timur"
-                    android:textColor="@color/hijau"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/montserrat"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rosy Klinik Pulomas"
-                    android:textColor="@color/biru_muda"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/montserrat"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:text=">"
-                android:textColor="@color/biru_muda"
-                android:textStyle="bold"
-                android:textSize="25sp"
-                android:fontFamily="@font/montserrat"/>
-
-        </RelativeLayout>
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 

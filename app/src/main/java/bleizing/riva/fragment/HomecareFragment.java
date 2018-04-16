@@ -38,7 +38,7 @@ public class HomecareFragment extends Fragment {
         btn_booking_sekarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomecareActivity) getActivity()).changeToRegistrasiFragment();
+                ((HomecareActivity) getActivity()).changeToBookingFragment();
             }
         });
     }

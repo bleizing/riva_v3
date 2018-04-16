@@ -2,6 +2,8 @@ package bleizing.riva.fragment;
 
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,7 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,6 +27,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import bleizing.riva.R;
+import bleizing.riva.activity.RumatActivity;
+import bleizing.riva.model.Lokasi;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +38,11 @@ public class DetailRumatFragment extends Fragment implements OnMapReadyCallback 
 
     GoogleMap mMap;
     private Double lat, lng;
+
+    private Lokasi lokasi;
+
+    private TextView tv_rumat_cabang;
+    private TextView tv_rumat_klinik;
 
     public DetailRumatFragment() {
         // Required empty public constructor
@@ -62,13 +74,15 @@ public class DetailRumatFragment extends Fragment implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+//        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-        LatLng b3 = new LatLng(-6.176712, 106.873415);
-        mMap.addMarker(new MarkerOptions().position(b3).title("Rumat").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(b3));
-        mMap.animateCamera( CameraUpdateFactory.zoomTo( 16.0f ) );
+//        LatLng b3 = new LatLng(-6.176712, 106.873415);
+        if (lokasi != null) {
+            LatLng latLng = new LatLng(lokasi.getLat(), lokasi.getLng());
+            mMap.addMarker(new MarkerOptions().position(latLng).title(lokasi.getNama()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            mMap.animateCamera( CameraUpdateFactory.zoomTo( 16.0f ) );
+        }
 
         mMap.setMinZoomPreference(10.0f);
         mMap.setMaxZoomPreference(20.0f);
@@ -78,11 +92,36 @@ public class DetailRumatFragment extends Fragment implements OnMapReadyCallback 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        Bundle args = getArguments();
+        lokasi = args.getParcelable("Lokasi");
+
+        tv_rumat_cabang = (TextView) getActivity().findViewById(R.id.tv_rumat_cabang);
+        tv_rumat_klinik = (TextView) getActivity().findViewById(R.id.tv_rumat_klinik);
+
+        // TODO : INI MASIH SALAH HARUSNYA CABANG
+        tv_rumat_cabang.setText(lokasi.getNama());
+
+        tv_rumat_klinik.setText(lokasi.getNama());
+
+        LinearLayout linear_registrasi = (LinearLayout) getActivity().findViewById(R.id.linear_registrasi);
+        linear_registrasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((RumatActivity) getActivity()).changeToRegistrasiFragment(lokasi.getId());
+            }
+        });
+
         ImageView img_phone = (ImageView) getActivity().findViewById(R.id.img_phone);
         img_phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (lokasi.getNoTelp().equals("")) {
+                    Toast.makeText(getActivity(), "Sementara Layanan Ini Belum Dapat Diakses", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:" + lokasi.getNoTelp()));
+                    startActivity(intent);
+                }
             }
         });
 

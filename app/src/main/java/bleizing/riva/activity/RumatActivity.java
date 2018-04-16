@@ -31,6 +31,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.HashMap;
@@ -44,6 +45,7 @@ import bleizing.riva.fragment.PaymentFragment;
 import bleizing.riva.fragment.PemesananFragment;
 import bleizing.riva.fragment.RegistrasiFragment;
 import bleizing.riva.fragment.RumatFragment;
+import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
 
 public class RumatActivity extends AppCompatActivity {
@@ -155,13 +157,16 @@ public class RumatActivity extends AppCompatActivity {
         Model.clearRumatActivity();
     }
 
-    public void changeToDetailRumatFragment() {
+    public void changeToDetailRumatFragment(Lokasi lokasi) {
         last_title = getSupportActionBar().getTitle().toString();
 
         hashMapTitle.put(countFragment, last_title);
         countFragment++;
 
         DetailRumatFragment detailRumatFragment = new DetailRumatFragment();
+        Bundle args = new Bundle();
+        args.putParcelable("Lokasi", lokasi);
+        detailRumatFragment.setArguments(args);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, detailRumatFragment, FRAGMENT_DETAIL_RUMAT_TAG);
@@ -169,13 +174,16 @@ public class RumatActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void changeToRegistrasiFragment(View view) {
+    public void changeToRegistrasiFragment(int id) {
         last_title = getSupportActionBar().getTitle().toString();
 
         hashMapTitle.put(countFragment, last_title);
         countFragment++;
 
         RegistrasiFragment registrasiFragment = new RegistrasiFragment();
+        Bundle args = new Bundle();
+        args.putInt("id", id);
+        registrasiFragment.setArguments(args);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, registrasiFragment, FRAGMENT_REGISTRASI_TAG);
@@ -306,7 +314,9 @@ public class RumatActivity extends AppCompatActivity {
                 // Got last known location. In some rare situations this can be null.
                 if (location != null) {
                     // Logic to handle location object
-                    Log.d(TAG, "lat = " + location.getLatitude() + ", lng = " + location.getLongitude());
+//                    Log.d(TAG, "lat = " + location.getLatitude() + ", lng = " + location.getLongitude());
+                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                    Model.setLatLng(latLng);
                 }
             }
         });

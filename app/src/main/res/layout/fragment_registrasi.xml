@@ -31,6 +31,7 @@
             android:background="@drawable/border_round">
 
             <EditText
+                android:id="@+id/edit_nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -51,6 +52,7 @@
             android:layout_marginTop="15dp">
 
             <EditText
+                android:id="@+id/edit_tgl_lahir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -72,6 +74,7 @@
             android:layout_marginTop="15dp">
 
             <EditText
+                android:id="@+id/edit_waktu_kunjungan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.9"
@@ -101,6 +104,7 @@
             android:layout_marginTop="15dp">
 
             <EditText
+                android:id="@+id/edit_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -121,6 +125,7 @@
             android:layout_marginTop="15dp">
 
             <EditText
+                android:id="@+id/edit_no_telp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

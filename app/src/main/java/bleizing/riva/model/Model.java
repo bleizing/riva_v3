@@ -1,5 +1,9 @@
 package bleizing.riva.model;
 
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
+
 import bleizing.riva.activity.HomecareActivity;
 import bleizing.riva.activity.RumatActivity;
 
@@ -10,6 +14,10 @@ import bleizing.riva.activity.RumatActivity;
 public class Model {
     private static HomecareActivity homecareActivity;
     private static RumatActivity rumatActivity;
+
+    private static ArrayList<Lokasi> lokasiArrayList;
+
+    private static LatLng latLng;
 
     public static void setHomecareActivity(HomecareActivity homecareActivity) {
         Model.homecareActivity = homecareActivity;
@@ -33,5 +41,21 @@ public class Model {
 
     public static void clearRumatActivity() {
         rumatActivity = null;
+    }
+
+    public static void setLatLng(LatLng latLng) {
+        Model.latLng = latLng;
+    }
+
+    public static LatLng getLatLng() {
+        return latLng;
+    }
+
+    public static void setLokasiArrayList(ArrayList<Lokasi> lokasiArrayList) {
+        Model.lokasiArrayList = lokasiArrayList;
+    }
+
+    public static ArrayList<Lokasi> getLokasiArrayList() {
+        return lokasiArrayList;
     }
 }

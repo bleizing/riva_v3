@@ -47,6 +47,7 @@ import bleizing.riva.fragment.RegistrasiFragment;
 import bleizing.riva.fragment.RumatFragment;
 import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
+import bleizing.riva.onGPSEnabled;
 
 public class RumatActivity extends AppCompatActivity {
     private static final String TAG = "RumatActivity";
@@ -67,6 +68,7 @@ public class RumatActivity extends AppCompatActivity {
 
     private int countFragment = 0;
 
+    private onGPSEnabled onGPSEnabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -317,8 +319,14 @@ public class RumatActivity extends AppCompatActivity {
 //                    Log.d(TAG, "lat = " + location.getLatitude() + ", lng = " + location.getLongitude());
                     LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                     Model.setLatLng(latLng);
+
+                    onGPSEnabled.onEnabled();
                 }
             }
         });
+    }
+
+    public void setOnGPSEnabled(onGPSEnabled onGPSEnabled) {
+        this.onGPSEnabled = onGPSEnabled;
     }
 }

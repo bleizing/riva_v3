@@ -43,6 +43,7 @@ import bleizing.riva.activity.RumatActivity;
 import bleizing.riva.adapter.RumatAdapter;
 import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
+import bleizing.riva.onGPSEnabled;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,7 +51,8 @@ import bleizing.riva.model.Model;
 public class RumatFragment extends Fragment implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener {
+        LocationListener,
+        onGPSEnabled {
 
 
     GoogleMap mMap;
@@ -86,6 +88,8 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
         if (latLng == null) {
             latLng = new LatLng(-6.175206,106.827131);
         }
+
+        ((RumatActivity) getActivity()).setOnGPSEnabled(this);
     }
 
     @Override
@@ -147,6 +151,13 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+
+        if (lokasiArrayList.size() != 0) {
+            for (Lokasi l : lokasiArrayList) {
+                LatLng latLng = new LatLng(l.getLat(), l.getLng());
+                mMap.addMarker(new MarkerOptions().position(latLng).title(l.getNama()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+            }
+        }
 
         setCenterPoint();
 
@@ -254,6 +265,14 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
         if (mMap != null) {
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera( CameraUpdateFactory.zoomTo( 12.0f ) );
+        }
+    }
+
+    @Override
+    public void onEnabled() {
+        if (mMap != null) {
+            latLng = Model.getLatLng();
+            setCenterPoint();
         }
     }
 }

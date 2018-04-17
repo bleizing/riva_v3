@@ -14,15 +14,20 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.HomecareActivity;
@@ -104,14 +109,7 @@ public class RegistrasiFragment extends Fragment {
                 if (!nama.equals("") && !tgl_lahir.equals("") && !waktu_kunjungan.equals("") && !no_telp.equals("") && !email.equals("")) {
                     sendDataToServer(nama, tgl_lahir, no_telp, waktu_kunjungan, email);
 
-                    // TODO : INI MAU KEMANA?
-                    if (rumatActivity != null) {
-                        ((RumatActivity) getActivity()).changeToPaymentFragment();
-                    }
 
-                    if (homecareActivity != null) {
-                        ((HomecareActivity) getActivity()).changeToPaymentFragment();
-                    }
                 } else {
                     Toast.makeText(getActivity(), "Lengkapi Form Terlebih Dahulu", Toast.LENGTH_SHORT).show();
                 }
@@ -119,50 +117,146 @@ public class RegistrasiFragment extends Fragment {
         });
     }
 
-    private void sendDataToServer(String nama, String tgl_lahir, String no_telp, String waktu_kunjungan, String email) {
-        final JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("rqid", NETApi.RQID);
-            jsonObject.put("Id_perusahaan", id);
-            jsonObject.put("nama", nama);
-            jsonObject.put("alamat", "");
-            jsonObject.put("ttl", tgl_lahir);
-            jsonObject.put("no_telp", no_telp);
-            jsonObject.put("waktu_kunjungan", waktu_kunjungan);
-            jsonObject.put("email", email);
+    private void sendDataToServer(final String nama, final String tgl_lahir, final String no_telp, final String waktu_kunjungan, final String email) {
+//        final JSONObject jsonObject = new JSONObject();
+//        try {
+//            jsonObject.put("rqid", NETApi.RQID);
+//            jsonObject.put("id_perusahaan", id);
+//            jsonObject.put("nama", nama);
+//            jsonObject.put("alamat", "");
+//            jsonObject.put("ttl", tgl_lahir);
+//            jsonObject.put("no_telp", no_telp);
+//            jsonObject.put("waktu_kunjungan", waktu_kunjungan);
+//            jsonObject.put("email", email);
+//
+//            Log.d(TAG, "jsonObject = " + jsonObject.toString());
+//
+//            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, NETApi.BASE_URL + NETApi.POST_HOMECARE, jsonObject, new Response.Listener<JSONObject>() {
+//                @Override
+//                public void onResponse(JSONObject response) {
+//                    Log.d(TAG, response.toString());
+//
+//                    // TODO : DATANYA MAU DIAPAIN?
+//                    try {
+//                        JSONObject jsonObject1 = response.getJSONObject("parameter");
+//
+//                        String booking_code = jsonObject1.getString("booking_code");
+//                        String id_unit = jsonObject1.getString("id_unit");
+//                        String nama = jsonObject1.getString("nama");
+//                        String ttl = jsonObject1.getString("ttl");
+//                        String no_telp = jsonObject1.getString("no_telp");
+//                        String waktu_kunjungan = jsonObject1.getString("waktu_kunjungan");
+//                        String email = jsonObject1.getString("email");
+//                        int status = jsonObject1.getInt("status");
+//
+//                        moveToNextFragment();
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }, new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//
+//                }
+//            }) {
+//                @Override
+//                public Map<String, String> getHeaders() throws AuthFailureError {
+//                    Map<String, String> pars = new HashMap<String, String>();
+//                    pars.put("Content-Type", "application/x-www-form-urlencoded");
+//                    return pars;
+//                }
+//
+//                @Override
+//                public String getBodyContentType() {
+//                    Map<String, String> pars = new HashMap<String, String>();
+//                    pars.put("Content-Type", "application/x-www-form-urlencoded");
+////                    pars.put("rqid", NETApi.RQID);
+////                    pars.put("id_perusahaan", String.valueOf(id));
+////                    pars.put("nama", nama);
+////                    pars.put("alamat", "");
+////                    pars.put("ttl", tgl_lahir);
+////                    pars.put("no_telp", no_telp);
+////                    pars.put("waktu_kunjungan", waktu_kunjungan);
+////                    pars.put("email", email);
+//                    Log.d(TAG, "pars = " + pars);
+////                    return pars.toString();
+//                    return "application/x-www-form-urlencoded";
+//                }
+//            };
+//
+//            jsonObjectRequest.setTag(TAG);
+//            requestQueue.add(jsonObjectRequest);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, NETApi.BASE_URL + NETApi.POST_HOMECARE, jsonObject, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Log.d(TAG, response.toString());
 
-                    // TODO : DATANYA MAU DIAPAIN?
-                    try {
-                        JSONObject jsonObject1 = response.getJSONObject("parameter");
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, NETApi.BASE_URL + NETApi.POST_BOOKING, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, response.toString());
 
-                        String booking_code = jsonObject1.getString("booking_code");
-                        String id_unit = jsonObject1.getString("id_unit");
-                        String nama = jsonObject1.getString("nama");
-                        String ttl = jsonObject1.getString("ttl");
-                        String no_telp = jsonObject1.getString("no_telp");
-                        String waktu_kunjungan = jsonObject1.getString("waktu_kunjungan");
-                        String email = jsonObject1.getString("email");
-                        int status = jsonObject1.getInt("status");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                 // TODO : DATANYA MAU DIAPAIN?
+                try {
+                    JSONObject jsonObject1 = new JSONObject(response).getJSONObject("parameter");
+
+                    String booking_code = jsonObject1.getString("booking_code");
+                    String id_unit = jsonObject1.getString("id_unit");
+                    String nama = jsonObject1.getString("nama");
+                    String ttl = jsonObject1.getString("ttl");
+                    String no_telp = jsonObject1.getString("no_telp");
+                    String waktu_kunjungan = jsonObject1.getString("waktu_kunjungan");
+                    String email = jsonObject1.getString("email");
+                    int status = jsonObject1.getInt("status");
+
+                    moveToNextFragment();
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
 
-                }
-            });
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                Map<String, String> pars = new HashMap<String, String>();
+                pars.put("Content-Type", "application/x-www-form-urlencoded");
+                //return pars;
+                return "application/x-www-form-urlencoded";
+            }
 
-            jsonObjectRequest.setTag(TAG);
-            requestQueue.add(jsonObjectRequest);
-        } catch (JSONException e) {
-            e.printStackTrace();
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> pars = new HashMap<String, String>();
+
+                pars.put("rqid", NETApi.RQID);
+                pars.put("id_perusahaan", String.valueOf(id));
+                pars.put("nama", nama);
+                pars.put("alamat", "");
+                pars.put("ttl", tgl_lahir);
+                pars.put("no_telp", no_telp);
+                pars.put("waktu_kunjungan", waktu_kunjungan);
+                pars.put("email", email);
+
+                return pars;
+            }
+        };
+        stringRequest.setTag(TAG);
+        requestQueue.add(stringRequest);
+    }
+
+    private void moveToNextFragment() {
+        // TODO : INI MAU KEMANA?
+        if (rumatActivity != null) {
+            ((RumatActivity) getActivity()).changeToPaymentFragment();
+        }
+
+        if (homecareActivity != null) {
+            ((HomecareActivity) getActivity()).changeToPaymentFragment();
         }
     }
 }

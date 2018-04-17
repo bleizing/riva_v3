@@ -72,8 +72,19 @@ public class SplashScreen extends AppCompatActivity {
                         String latString = jsonObject.optString("lat");
                         String lngString = jsonObject.optString("lng");
                         String type = jsonObject.optString("type");
+                        String noTelp = jsonObject.getString("telp");
 
-                        String noTelp = "";
+                        if (noTelp.split("/").length != 0) {
+                            noTelp = noTelp.split("/")[0];
+                        }
+
+                        if (noTelp.split(" ").length != 0) {
+                            String noTelpArr[] = noTelp.split(" ");
+                            noTelp = "";
+                            for (String aNoTelpArr : noTelpArr) {
+                                noTelp += aNoTelpArr;
+                            }
+                        }
 
                         if (!latString.equals("null") && !lngString.equals("null")) {
                             Double lat = Double.parseDouble(latString);

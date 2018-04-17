@@ -446,6 +446,7 @@
                     android:layout_gravity="center_vertical"
                     android:hint="Nomor HP/Tel. Rumah Pasien"
                     android:inputType="number"
+                    android:maxLength="13"
                     android:textColorHint="@color/colorPrimaryDark"
                     android:textSize="12sp"
                     android:textColor="@color/colorPrimaryDark"

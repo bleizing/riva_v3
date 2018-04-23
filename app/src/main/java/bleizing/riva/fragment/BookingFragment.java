@@ -311,8 +311,8 @@ public class BookingFragment extends Fragment {
             public String getBodyContentType() {
                 Map<String, String> pars = new HashMap<String, String>();
                 pars.put("Content-Type", "multipart/form-data");
-                //return pars;
-                return "multipart/form-data";
+//                return pars;
+                return "application/x-www-form-urlencoded";
             }
 
             @Override
@@ -321,7 +321,7 @@ public class BookingFragment extends Fragment {
 
                 pars.put("rqid", NETApi.RQID);
                 pars.put("nama", nama);
-                pars.put("alamat", "");
+                pars.put("alamat", lokasi);
                 pars.put("ttl", tgl_lahir);
                 pars.put("no_telp", no_telp);
                 pars.put("waktu_dikunjungi", jadwal_tgl + jadwal_waktu);
@@ -332,6 +332,7 @@ public class BookingFragment extends Fragment {
                 pars.put("no_mr", "");
                 pars.put("id_perawat", "");
 
+//                Log.d(TAG, "pars = " + pars.toString());
 
                 return pars;
             }

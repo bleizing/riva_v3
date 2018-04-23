@@ -19,6 +19,8 @@ public class Model {
 
     private static LatLng latLng;
 
+    private static ArrayList<Integer> gds;
+
     public static void setHomecareActivity(HomecareActivity homecareActivity) {
         Model.homecareActivity = homecareActivity;
     }
@@ -57,5 +59,13 @@ public class Model {
 
     public static ArrayList<Lokasi> getLokasiArrayList() {
         return lokasiArrayList;
+    }
+
+    public static void setGds(ArrayList<Integer> gds) {
+        Model.gds = gds;
+    }
+
+    public static ArrayList<Integer> getGds() {
+        return gds;
     }
 }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import java.util.List;
 
 import bleizing.riva.R;
 import bleizing.riva.activity.JurnalGdsActivity;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -100,8 +102,8 @@ public class GrafikFragment extends Fragment {
         l.setForm(Legend.LegendForm.LINE);
 
         // no description text
-        lineChart.setDescription("Demo Line Chart");
-        lineChart.setNoDataTextDescription("You need to provide data for the chart.");
+        lineChart.setDescription("Gula Darah Chart");
+//        lineChart.setNoDataTextDescription("You need to provide data for the chart.");
 
 //        List<String> categories = new ArrayList<String>();
 //        categories.add("Harian");
@@ -149,6 +151,20 @@ public class GrafikFragment extends Fragment {
                 btn_tambah.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        EditText editAngka = (EditText) dialog.findViewById(R.id.angka);
+                        int angka = Integer.parseInt(editAngka.getText().toString());
+                        ArrayList<Integer> angkas = Model.getGds();
+                        if (angkas == null) {
+                            angkas = new ArrayList<>();
+                        }
+                        angkas.add(angka);
+                        Model.setGds(angkas);
+
+                        setYAxisValues();
+                        setData();
+                        lineChart.notifyDataSetChanged();
+                        lineChart.invalidate();
+
                         final Dialog dialog2 = new Dialog(getActivity());
                         dialog2.setContentView(R.layout.dialog_tips_jurnal);
 
@@ -158,6 +174,7 @@ public class GrafikFragment extends Fragment {
                             public void onClick(View view) {
                                 dialog2.dismiss();
                                 dialog.dismiss();
+
                             }
                         });
 
@@ -173,9 +190,23 @@ public class GrafikFragment extends Fragment {
     // This is used to store x-axis values
     private ArrayList<String> setXAxisValues(){
         ArrayList<String> xVals = new ArrayList<String>();
-        xVals.add("10");
-        xVals.add("20");
-        xVals.add("30");
+        ArrayList<Integer> angkas = Model.getGds();
+        if (angkas == null) {
+            angkas = new ArrayList<>();
+        }
+
+        if (angkas.size() > 1) {
+            int j = 1;
+            for (Integer i : angkas) {
+                xVals.add(String.valueOf(j));
+                j++;
+            }
+        } else if (angkas.size() == 1) {
+            xVals.add("1");
+        }
+//        xVals.add("1");
+//        xVals.add("20");
+//        xVals.add("30");
 
         return xVals;
     }
@@ -183,9 +214,23 @@ public class GrafikFragment extends Fragment {
     // This is used to store Y-axis values
     private ArrayList<Entry> setYAxisValues(){
         ArrayList<Entry> yVals = new ArrayList<Entry>();
-        yVals.add(new Entry(60, 0));
-        yVals.add(new Entry(48, 1));
-        yVals.add(new Entry(100, 3));
+        ArrayList<Integer> angkas = Model.getGds();
+        if (angkas == null) {
+            angkas = new ArrayList<>();
+        }
+
+        if (angkas.size() > 1) {
+            int j = 0;
+            for (Integer i : angkas) {
+                yVals.add(new Entry(i, j));
+                j++;
+            }
+        } else if (angkas.size() == 1) {
+            yVals.add(new Entry(angkas.get(0), 0));
+        }
+//        yVals.add(new Entry(Model.getGds(), 0));
+//        yVals.add(new Entry(48, 1));
+//        yVals.add(new Entry(100, 3));
 
         return yVals;
     }
@@ -198,7 +243,7 @@ public class GrafikFragment extends Fragment {
         LineDataSet set1;
 
         // create a dataset and give it a type
-        set1 = new LineDataSet(yVals, "DataSet 1");
+        set1 = new LineDataSet(yVals, "Gula Darah");
         set1.setFillAlpha(110);
         // set1.setFillColor(Color.RED);
 

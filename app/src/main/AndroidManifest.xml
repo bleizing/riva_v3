@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashScreen"
+        <activity
+            android:name=".activity.SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,25 +29,31 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAtLkDODapTKXloNR2fcAtpKcTN2FOYdoA" />
 
-        <activity android:name=".activity.HomeActivity"
+        <activity
+            android:name=".activity.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.HomecareActivity"
+        <activity
+            android:name=".activity.HomecareActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.RumatActivity" />
-        <activity android:name=".activity.DressingActivity"
+        <activity
+            android:name=".activity.DressingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.SuplemenActivity"
+        <activity
+            android:name=".activity.SuplemenActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.EdukasiActivity" />
         <activity android:name=".activity.TrainingActivity" />
         <activity android:name=".activity.BonusReferensiActivity" />
         <activity android:name=".activity.JurnalGdsActivity" />
+        <activity
+            android:name=".activity.PilihLokasiActivity"
+            android:label="@string/title_activity_pilih_lokasi"></activity>
     </application>
 
 </manifest>

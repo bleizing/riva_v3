@@ -37,4 +37,5 @@ Kontrol selalu kadar gula darah. Jika terdapat tanda tanda luka segera dibersiha
     <string name="isi_diabetes2">Kerusakan saraf (neuropati). Hal ini ditandai dengan tidak merasakan sakitnya luka sampai terjadi perburukan dan infeksi.</string>
     <string name="isi_diabetes3">Sistem kekebalan tubuh yang lemah. Ketika pertahanan alami tubuh menurun, bakan luka kecil dapat terinfeksi dan menjadi lebih besar.</string>
     <string name="isi_diabetes4">Penyempitan pembuluh darah. Penderita diabetes dengan penyumbatan pembuluh darah di kaki memiliki resiko lebih tinggi untuk mengalami luka, mengalami infeksi dan masalah pada proses penyembuhan. Pembuluh darah yang menyempit membuat darah yang berfungsi mengangkut oksigen dan nutrisi lebih sulit untuk sampai ke luka. Terhambatnya oksigen dan nutrisi ini pada akhirnya berakibat pada lambannya penyembuhan luka dan meningkatnya resiko infeksi pada penderita diabetes.</string>
+    <string name="title_activity_pilih_lokasi">Map</string>
 </resources>

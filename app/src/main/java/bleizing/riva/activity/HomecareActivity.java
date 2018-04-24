@@ -112,6 +112,9 @@ public class HomecareActivity extends AppCompatActivity {
     public void changeToBookingFragment() {
         last_title = toolbar.getTitle().toString();
 
+        hashMapTitle.put(countFragment, last_title);
+        countFragment++;
+
         BookingFragment bookingFragment = new BookingFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
         actionBar.setTitle("LOGIN");
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null) {
             LoginFragment loginFragment = new LoginFragment();

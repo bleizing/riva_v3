@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
+import com.codetroopers.betterpickers.calendardatepicker.MonthAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -182,6 +184,8 @@ public class RegistrasiFragment extends Fragment {
         edit_waktu_kunjungan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                jam_kunjungan = "";
+                edit_waktu_kunjungan.setText("");
                 showTimeDialog();
             }
         });
@@ -311,7 +315,7 @@ public class RegistrasiFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(rumatActivity, "Proses Registrasi Gagal", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -371,7 +375,17 @@ public class RegistrasiFragment extends Fragment {
                 /**
                  * Method ini dipanggil saat kita selesai memilih waktu di DatePicker
                  */
-                jam_kunjungan = hourOfDay + ":" + minute;
+
+                if (hourOfDay < 10) {
+                    jam_kunjungan = "0";
+                }
+
+                jam_kunjungan += hourOfDay;
+                jam_kunjungan += ":";
+
+                if (minute < 10) {
+                    jam_kunjungan += "0" + minute;
+                }
 
                 edit_waktu_kunjungan.setText(jam_kunjungan);
             }

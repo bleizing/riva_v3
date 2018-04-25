@@ -219,6 +219,8 @@ public class BookingFragment extends Fragment {
         edit_jadwal_waktu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                jadwal_waktu = "";
+                edit_jadwal_waktu.setText("");
                 showTimeDialog();
             }
         });
@@ -402,7 +404,7 @@ public class BookingFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(getContext(), "Proses Order Gagal", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -509,7 +511,17 @@ public class BookingFragment extends Fragment {
                 /**
                  * Method ini dipanggil saat kita selesai memilih waktu di DatePicker
                  */
-                jadwal_waktu = hourOfDay + ":" + minute;
+
+                if (hourOfDay < 10) {
+                    jadwal_waktu = "0";
+                }
+
+                jadwal_waktu += hourOfDay;
+                jadwal_waktu += ":";
+
+                if (minute < 10) {
+                    jadwal_waktu += "0" + minute;
+                }
 
                 edit_jadwal_waktu.setText(jadwal_waktu);
 

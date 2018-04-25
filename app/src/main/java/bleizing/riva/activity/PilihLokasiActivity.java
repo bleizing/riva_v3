@@ -15,6 +15,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -36,11 +42,16 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import bleizing.riva.R;
 import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
+import bleizing.riva.model.NETApi;
 
 public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyCallback {
     private static final String TAG = PilihLokasiActivity.class.getSimpleName();
@@ -59,6 +70,8 @@ public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyC
 
     private ArrayList<Lokasi> lokasiArrayList;
 
+    private RequestQueue requestQueue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +86,10 @@ public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyC
         lokasiArrayList = Model.getLokasiArrayList();
         if (lokasiArrayList == null) {
             lokasiArrayList = new ArrayList<>();
+
+            requestQueue = Volley.newRequestQueue(this);
+
+            getLokasiRumatList();
         }
 
         btnPilihLokasi = (Button) findViewById(R.id.btnPilihLokasi);
@@ -249,5 +266,60 @@ public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyC
                 mMap.animateCamera( CameraUpdateFactory.zoomTo( 13.0f ) );
             }
         }
+    }
+
+    private void getLokasiRumatList() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d(TAG, response.toString());
+                try {
+                    JSONArray jsonArray = response.getJSONArray("parameter");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                        String id = jsonObject.getString("id");
+                        String nama = jsonObject.getString("nama");
+                        String alamat = jsonObject.getString("alamat");
+                        String latString = jsonObject.optString("lat");
+                        String lngString = jsonObject.optString("lng");
+                        String type = jsonObject.optString("type");
+                        String noTelp = jsonObject.getString("telp");
+
+                        if (noTelp.split("/").length != 0) {
+                            noTelp = noTelp.split("/")[0];
+                        }
+
+                        if (noTelp.split(" ").length != 0) {
+                            String noTelpArr[] = noTelp.split(" ");
+                            noTelp = "";
+                            for (String aNoTelpArr : noTelpArr) {
+                                noTelp += aNoTelpArr;
+                            }
+                        }
+
+                        if (!latString.equals("null") && !lngString.equals("null")) {
+                            Double lat = Double.parseDouble(latString);
+                            Double lng = Double.parseDouble(lngString);
+
+                            Lokasi lokasi = new Lokasi(Integer.parseInt(id), nama, alamat, lat, lng, type, noTelp);
+                            lokasiArrayList.add(lokasi);
+                        }
+                    }
+                    Model.setLokasiArrayList(lokasiArrayList);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        jsonObjectRequest.setTag(TAG);
+        requestQueue.add(jsonObjectRequest);
     }
 }

@@ -18,11 +18,18 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -34,6 +41,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 import bleizing.riva.MyClickListener;
@@ -43,6 +54,7 @@ import bleizing.riva.activity.RumatActivity;
 import bleizing.riva.adapter.RumatAdapter;
 import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
+import bleizing.riva.model.NETApi;
 import bleizing.riva.onGPSEnabled;
 
 /**
@@ -54,6 +66,7 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
         LocationListener,
         onGPSEnabled {
 
+    private static final String TAG = "RumatFragment";
 
     GoogleMap mMap;
 //    private Double lat, lng;
@@ -64,6 +77,8 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
 
     private ArrayList<Lokasi> lokasiArrayList;
     private RumatAdapter rumatAdapter;
+
+    private RequestQueue requestQueue;
 
     public RumatFragment() {
         // Required empty public constructor
@@ -82,6 +97,10 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
         lokasiArrayList = Model.getLokasiArrayList();
         if (lokasiArrayList == null) {
             lokasiArrayList = new ArrayList<>();
+
+            requestQueue = Volley.newRequestQueue(getContext());
+
+            getLokasiRumatList();
         }
 
         latLng = Model.getLatLng();
@@ -274,5 +293,60 @@ public class RumatFragment extends Fragment implements OnMapReadyCallback,
             latLng = Model.getLatLng();
             setCenterPoint();
         }
+    }
+
+    private void getLokasiRumatList() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d(TAG, response.toString());
+                try {
+                    JSONArray jsonArray = response.getJSONArray("parameter");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                        String id = jsonObject.getString("id");
+                        String nama = jsonObject.getString("nama");
+                        String alamat = jsonObject.getString("alamat");
+                        String latString = jsonObject.optString("lat");
+                        String lngString = jsonObject.optString("lng");
+                        String type = jsonObject.optString("type");
+                        String noTelp = jsonObject.getString("telp");
+
+                        if (noTelp.split("/").length != 0) {
+                            noTelp = noTelp.split("/")[0];
+                        }
+
+                        if (noTelp.split(" ").length != 0) {
+                            String noTelpArr[] = noTelp.split(" ");
+                            noTelp = "";
+                            for (String aNoTelpArr : noTelpArr) {
+                                noTelp += aNoTelpArr;
+                            }
+                        }
+
+                        if (!latString.equals("null") && !lngString.equals("null")) {
+                            Double lat = Double.parseDouble(latString);
+                            Double lng = Double.parseDouble(lngString);
+
+                            Lokasi lokasi = new Lokasi(Integer.parseInt(id), nama, alamat, lat, lng, type, noTelp);
+                            lokasiArrayList.add(lokasi);
+                        }
+                    }
+                    Model.setLokasiArrayList(lokasiArrayList);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        jsonObjectRequest.setTag(TAG);
+        requestQueue.add(jsonObjectRequest);
     }
 }

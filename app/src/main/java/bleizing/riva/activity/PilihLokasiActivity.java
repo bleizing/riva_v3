@@ -85,6 +85,7 @@ public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyC
 
         lokasiArrayList = Model.getLokasiArrayList();
         if (lokasiArrayList == null) {
+            Log.d(TAG, "lokasiArrayList == null");
             lokasiArrayList = new ArrayList<>();
 
             requestQueue = Volley.newRequestQueue(this);
@@ -269,7 +270,7 @@ public class PilihLokasiActivity extends FragmentActivity implements OnMapReadyC
     }
 
     private void getLokasiRumatList() {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT +  NETApi.ID_USER + "=1", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, response.toString());

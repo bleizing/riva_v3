@@ -333,11 +333,13 @@ public class RegistrasiFragment extends Fragment {
                 pars.put("rqid", NETApi.RQID);
                 pars.put("id_perusahaan", String.valueOf(id));
                 pars.put("nama", nama);
-                pars.put("alamat", "");
+//                pars.put("alamat", "");
                 pars.put("ttl", tgl_lahir);
                 pars.put("no_telp", no_telp);
                 pars.put("waktu_kunjungan", waktu_kunjungan);
                 pars.put("email", email);
+                pars.put("id_user", "1");
+                pars.put("no_mr", "");
 
                 Log.wtf(TAG, "pars = " + pars.toString());
 
@@ -384,8 +386,10 @@ public class RegistrasiFragment extends Fragment {
                 jam_kunjungan += ":";
 
                 if (minute < 10) {
-                    jam_kunjungan += "0" + minute;
+                    jam_kunjungan += "0";
                 }
+
+                jam_kunjungan += minute;
 
                 edit_waktu_kunjungan.setText(jam_kunjungan);
             }

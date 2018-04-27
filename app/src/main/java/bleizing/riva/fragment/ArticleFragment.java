@@ -15,18 +15,24 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 import bleizing.riva.MyClickListener;
 import bleizing.riva.R;
 import bleizing.riva.RecyclerTouchListener;
 import bleizing.riva.activity.EdukasiActivity;
 import bleizing.riva.adapter.ArticleAdapter;
+import bleizing.riva.model.Artikel;
+import bleizing.riva.model.Model;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ArticleFragment extends Fragment {
 
-//    private ArticleAdapter articleAdapter;
+    private ArticleAdapter articleAdapter;
+
+    private ArrayList<Artikel> artikelArrayList;
 
     public ArticleFragment() {
         // Required empty public constructor
@@ -44,26 +50,33 @@ public class ArticleFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-//        articleAdapter = new ArticleAdapter();
-//
-//        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.article_recycler_view);
-//        recyclerView.setAdapter(articleAdapter);
-//        articleAdapter.notifyDataSetChanged();
-//
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new MyClickListener() {
-//            @Override
-//            public void onClick(View view, int position) {
-//
-//            }
-//
-//            @Override
-//            public void onLongClick(View view, int position) {
-//
-//            }
-//        }));
+        artikelArrayList = Model.getArtikelArrayList();
+
+        if (artikelArrayList == null) {
+            artikelArrayList = new ArrayList<>();
+        }
+
+        articleAdapter = new ArticleAdapter(artikelArrayList, getContext());
+
+        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.article_recycler_view);
+        recyclerView.setAdapter(articleAdapter);
+        articleAdapter.notifyDataSetChanged();
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView, new MyClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Artikel artikel = articleAdapter.getArtikelArrayList().get(position);
+                ((EdukasiActivity) getActivity()).changeToDetailArticleFragment(artikel);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
 
         ((EdukasiActivity) getActivity()).setActionBarTitle("ARTIKEL");
 
@@ -87,17 +100,17 @@ public class ArticleFragment extends Fragment {
 //        webView.clearHistory();
 //        webView.loadUrl(url_article_rumat);
 
-        LinearLayout linear_kotak1 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak1);
-        LinearLayout linear_kotak2 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak2);
-
-        linear_kotak1.setOnClickListener(onClickListener);
-        linear_kotak2.setOnClickListener(onClickListener);
+//        LinearLayout linear_kotak1 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak1);
+//        LinearLayout linear_kotak2 = (LinearLayout) getActivity().findViewById(R.id.linear_kotak2);
+//
+//        linear_kotak1.setOnClickListener(onClickListener);
+//        linear_kotak2.setOnClickListener(onClickListener);
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            ((EdukasiActivity) getActivity()).changeToDetailArticleFragment(1);
-        }
-    };
+//    private View.OnClickListener onClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            ((EdukasiActivity) getActivity()).changeToDetailArticleFragment(1);
+//        }
+//    };
 }

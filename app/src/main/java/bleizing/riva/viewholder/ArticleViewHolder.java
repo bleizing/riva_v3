@@ -14,10 +14,10 @@ import bleizing.riva.R;
 
 public class ArticleViewHolder extends RecyclerView.ViewHolder {
 
-    TextView tv_tanggal_article;
-    TextView tv_bulan_article;
-    TextView tv_title_article;
-    NetworkImageView img_foto_article;
+    public TextView tv_tanggal_article;
+    public TextView tv_bulan_article;
+    public TextView tv_title_article;
+    public NetworkImageView img_foto_article;
 
     public ArticleViewHolder(View itemView) {
         super(itemView);

@@ -421,7 +421,6 @@ public class BookingFragment extends Fragment {
 
                 pars.put("rqid", NETApi.RQID);
                 pars.put("nama", nama);
-                pars.put("alamat", lokasi);
                 pars.put("ttl", tgl_lahir);
                 pars.put("no_telp", no_telp);
                 pars.put("waktu_dikunjungi", waktu_kunjungan);
@@ -429,8 +428,13 @@ public class BookingFragment extends Fragment {
                 pars.put("jk_perawat", jk_perawat);
                 pars.put("kode_referal", kode_referensi);
                 pars.put("no_mr", "");
-                pars.put("id_perawat", "");
                 pars.put("foto_luka", foto_luka);
+                // TODO: MASUKIN DATA YANG VALID!
+                pars.put("id_perawat", "");
+                pars.put("alamat", lokasi);
+                pars.put("id_user", "1");
+                pars.put("lat", "-6.35345");
+                pars.put("lng", "106.34535354");
 
                 Log.d(TAG, "pars = " + pars.toString());
 
@@ -520,8 +524,10 @@ public class BookingFragment extends Fragment {
                 jadwal_waktu += ":";
 
                 if (minute < 10) {
-                    jadwal_waktu += "0" + minute;
+                    jadwal_waktu += "0";
                 }
+
+                jadwal_waktu += minute;
 
                 edit_jadwal_waktu.setText(jadwal_waktu);
 

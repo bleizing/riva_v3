@@ -17,6 +17,8 @@ public class Model {
 
     private static ArrayList<Lokasi> lokasiArrayList;
 
+    private static ArrayList<Artikel> artikelArrayList;
+
     private static LatLng latLng;
 
     private static ArrayList<Integer> gds;
@@ -67,5 +69,13 @@ public class Model {
 
     public static ArrayList<Integer> getGds() {
         return gds;
+    }
+
+    public static void setArtikelArrayList(ArrayList<Artikel> artikelArrayList) {
+        Model.artikelArrayList = artikelArrayList;
+    }
+
+    public static ArrayList<Artikel> getArtikelArrayList() {
+        return artikelArrayList;
     }
 }

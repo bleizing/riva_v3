@@ -6,166 +6,166 @@
     tools:context="bleizing.riva.fragment.ArticleFragment"
     android:orientation="vertical">
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/article_recycler_view"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/article_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
+    </android.support.v7.widget.RecyclerView>
 
     <!--<WebView-->
         <!--android:id="@+id/webview"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
 
-        <LinearLayout
-            android:id="@+id/linear_kotak1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/linear_kotak1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp">
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="5dp">-->
 
-                <LinearLayout
-                    android:id="@+id/linear_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linear_1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/tv_tanggal_article"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="03"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/hijau"
-                        android:fontFamily="@font/montserrat"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_tanggal_article"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="03"-->
+                        <!--android:textSize="25sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/hijau"-->
+                        <!--android:fontFamily="@font/montserrat"/>-->
 
-                    <TextView
-                        android:id="@+id/tv_bulan_article"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="MAR"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/biru_muda"
-                        android:fontFamily="@font/montserrat" />
-                </LinearLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_bulan_article"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="MAR"-->
+                        <!--android:textSize="20sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/biru_muda"-->
+                        <!--android:fontFamily="@font/montserrat" />-->
+                <!--</LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/garis"
-                    android:layout_width="2dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/linear_1"
-                    android:layout_marginStart="5dp"
-                    android:background="@color/biru_tua"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/garis"-->
+                    <!--android:layout_width="2dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:layout_toEndOf="@id/linear_1"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:background="@color/biru_tua"/>-->
 
-                <TextView
-                    android:id="@+id/tv_title_article"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/garis"
-                    android:layout_marginStart="5dp"
-                    android:layout_centerVertical="true"
-                    android:text="BERENANG UNTUK STABILKAN GULA DARAH"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/biru_tua"
-                    android:fontFamily="@font/montserrat"/>
-            </RelativeLayout>
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_title_article"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_toEndOf="@id/garis"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="BERENANG UNTUK STABILKAN GULA DARAH"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/biru_tua"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+            <!--</RelativeLayout>-->
 
-            <ImageView
-                android:id="@+id/img_foto_article"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/nurse_onboarding_making_first_impressions_count" />
+            <!--<ImageView-->
+                <!--android:id="@+id/img_foto_article"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="150dp"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/nurse_onboarding_making_first_impressions_count" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
-        <LinearLayout
-            android:id="@+id/linear_kotak2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+        <!--<LinearLayout-->
+            <!--android:id="@+id/linear_kotak2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_marginTop="10dp">-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp">
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="5dp">-->
 
-                <LinearLayout
-                    android:id="@+id/linear_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linear_2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/tv_tanggal_article2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="03"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/hijau"
-                        android:fontFamily="@font/montserrat"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_tanggal_article2"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="03"-->
+                        <!--android:textSize="25sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/hijau"-->
+                        <!--android:fontFamily="@font/montserrat"/>-->
 
-                    <TextView
-                        android:id="@+id/tv_bulan_article2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:text="MAR"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/biru_muda"
-                        android:fontFamily="@font/montserrat" />
-                </LinearLayout>
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_bulan_article2"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="MAR"-->
+                        <!--android:textSize="20sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/biru_muda"-->
+                        <!--android:fontFamily="@font/montserrat" />-->
+                <!--</LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/garis2"
-                    android:layout_width="2dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/linear_2"
-                    android:layout_marginStart="5dp"
-                    android:background="@color/biru_tua"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/garis2"-->
+                    <!--android:layout_width="2dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:layout_toEndOf="@id/linear_2"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:background="@color/biru_tua"/>-->
 
-                <TextView
-                    android:id="@+id/tv_title_article2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/garis2"
-                    android:layout_marginStart="5dp"
-                    android:layout_centerVertical="true"
-                    android:text="BERENANG UNTUK STABILKAN GULA DARAH"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/biru_tua"
-                    android:fontFamily="@font/montserrat"/>
-            </RelativeLayout>
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_title_article2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_toEndOf="@id/garis2"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="BERENANG UNTUK STABILKAN GULA DARAH"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/biru_tua"-->
+                    <!--android:fontFamily="@font/montserrat"/>-->
+            <!--</RelativeLayout>-->
 
-            <ImageView
-                android:id="@+id/img_foto_article2"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/nurse_onboarding_making_first_impressions_count" />
+            <!--<ImageView-->
+                <!--android:id="@+id/img_foto_article2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="150dp"-->
+                <!--android:scaleType="fitXY"-->
+                <!--android:src="@drawable/nurse_onboarding_making_first_impressions_count" />-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 </LinearLayout>

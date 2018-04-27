@@ -56,7 +56,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void getLokasiRumatList() {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT +  NETApi.ID_USER + "1", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, response.toString());
@@ -72,17 +72,20 @@ public class SplashScreen extends AppCompatActivity {
                         String latString = jsonObject.optString("lat");
                         String lngString = jsonObject.optString("lng");
                         String type = jsonObject.optString("type");
-                        String noTelp = jsonObject.getString("telp");
+                        String noTelp = "";
+                        noTelp = jsonObject.optString("telp");
 
-                        if (noTelp.split("/").length != 0) {
-                            noTelp = noTelp.split("/")[0];
-                        }
+                        if (!noTelp.equals("")) {
+                            if (noTelp.split("/").length != 0) {
+                                noTelp = noTelp.split("/")[0];
+                            }
 
-                        if (noTelp.split(" ").length != 0) {
-                            String noTelpArr[] = noTelp.split(" ");
-                            noTelp = "";
-                            for (String aNoTelpArr : noTelpArr) {
-                                noTelp += aNoTelpArr;
+                            if (noTelp.split(" ").length != 0) {
+                                String noTelpArr[] = noTelp.split(" ");
+                                noTelp = "";
+                                for (String aNoTelpArr : noTelpArr) {
+                                    noTelp += aNoTelpArr;
+                                }
                             }
                         }
 

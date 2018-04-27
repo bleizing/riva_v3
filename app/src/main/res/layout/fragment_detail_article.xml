@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BERENANG UNTUK STABILKAN GULA DARAH"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/hijau"
                 android:fontFamily="@font/montserrat"/>
@@ -125,38 +125,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/isi_diabetes1"
-                android:textSize="10sp"
+                android:textSize="13sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="@font/montserrat"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/isi_diabetes2"
-                android:textSize="10sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="@font/montserrat"/>
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/isi_diabetes2"-->
+                <!--android:textSize="10sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/isi_diabetes3"
-                android:textSize="10sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="@font/montserrat"/>
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/isi_diabetes3"-->
+                <!--android:textSize="10sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/isi_diabetes4"
-                android:textSize="10sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:fontFamily="@font/montserrat"/>
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="@string/isi_diabetes4"-->
+                <!--android:textSize="10sp"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:fontFamily="@font/montserrat"/>-->
 
         </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

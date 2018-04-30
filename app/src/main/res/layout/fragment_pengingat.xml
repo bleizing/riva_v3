@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     tools:context="bleizing.riva.fragment.PengingatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/lvPengingat"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+    </ListView>
 
 </FrameLayout>

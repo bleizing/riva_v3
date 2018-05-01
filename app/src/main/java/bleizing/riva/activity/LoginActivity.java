@@ -22,10 +22,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private int countFragment = 0;
 
+    private int status;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        status = 0;
 
         hashMapTitle = new HashMap<>();
 
@@ -35,6 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_biru_biru));
         actionBar.setTitle("LOGIN");
 //        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        if (getIntent().getExtras() != null) {
+            status = getIntent().getExtras().getInt("status");
+        }
 
         if (savedInstanceState == null) {
             LoginFragment loginFragment = new LoginFragment();
@@ -77,5 +85,9 @@ public class LoginActivity extends AppCompatActivity {
 //            startActivity(intent);
             finish();
         }
+    }
+
+    public int getStatus() {
+        return status;
     }
 }

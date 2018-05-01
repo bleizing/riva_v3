@@ -19,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import bleizing.riva.PrefManager;
 import bleizing.riva.R;
 import bleizing.riva.model.Lokasi;
 import bleizing.riva.model.Model;
@@ -44,19 +45,37 @@ public class SplashScreen extends AppCompatActivity {
 
         getLokasiRumatList();
 
+        final PrefManager prefManager = new PrefManager(this);
+        Log.d(TAG, "status = " + prefManager.getStatus());
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, SPLASH_TIME);
+        if (prefManager.getStatus() <= 1) {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
+                    Bundle args = new Bundle();
+                    args.putInt("status", prefManager.getStatus());
+                    intent.putExtras(args);
+                    startActivity(intent);
+                    finish();
+                }
+            }, SPLASH_TIME);
+        } else {
+            Model.setId(prefManager.getId());
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(SplashScreen.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }, SPLASH_TIME);
+        }
+
     }
 
     private void getLokasiRumatList() {
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT +  NETApi.ID_USER + "1", null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, NETApi.BASE_URL + NETApi.GET_LOKASI_RUMAT +  NETApi.ID_USER + Model.getId(), null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d(TAG, response.toString());

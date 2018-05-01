@@ -23,6 +23,8 @@ public class Model {
 
     private static ArrayList<GulaDarah> gds;
 
+    private static int id;
+
     public static void setHomecareActivity(HomecareActivity homecareActivity) {
         Model.homecareActivity = homecareActivity;
     }
@@ -77,5 +79,13 @@ public class Model {
 
     public static ArrayList<Artikel> getArtikelArrayList() {
         return artikelArrayList;
+    }
+
+    public static void setId(int id) {
+        Model.id = id;
+    }
+
+    public static int getId() {
+        return id;
     }
 }

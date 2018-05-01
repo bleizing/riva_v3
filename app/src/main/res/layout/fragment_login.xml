@@ -21,24 +21,26 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:text="Silahkan login untuk mengakses aplikasi"
+        android:text="Silahkan register untuk mengakses aplikasi"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         android:fontFamily="@font/montserrat"/>
 
     <LinearLayout
+        android:id="@+id/linRegis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border_round"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:visibility="gone">
 
         <EditText
             android:id="@+id/editUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="No HP"
             android:textColorHint="@color/colorPrimaryDark"
             android:textColor="@color/colorPrimaryDark"
             android:fontFamily="@font/montserrat"
@@ -48,18 +50,20 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linVerif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border_round"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginTop="25dp">
+        android:layout_marginTop="25dp"
+        android:visibility="gone">
 
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Kode Verifikasi"
             android:textColorHint="@color/colorPrimaryDark"
             android:textColor="@color/colorPrimaryDark"
             android:fontFamily="@font/montserrat"
@@ -75,47 +79,49 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginTop="25dp"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@color/cardview_light_background"
         android:textSize="16sp"
         android:fontFamily="@font/montserrat"
         android:background="@drawable/border_round_button"/>
 
     <TextView
+        android:id="@+id/tvKirimUlang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
-        android:text="Lupa Password?"
+        android:text="Kirim Ulang Kode Verifikasi"
+        android:visibility="gone"
         android:textColor="@color/biru_muda"
         android:textSize="12sp"
         android:fontFamily="@font/montserrat"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="50dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="end|bottom"-->
+        <!--android:layout_marginEnd="25dp"-->
+        <!--android:layout_marginTop="50dp">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Belum punya akun?"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp"
-            android:fontFamily="@font/montserrat"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Belum punya akun?"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:textSize="12sp"-->
+            <!--android:fontFamily="@font/montserrat"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="Daftar Sekarang"
-            android:textColor="@color/biru_muda"
-            android:textSize="12sp"
-            android:fontFamily="@font/montserrat"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="5dp"-->
+            <!--android:text="Daftar Sekarang"-->
+            <!--android:textColor="@color/biru_muda"-->
+            <!--android:textSize="12sp"-->
+            <!--android:fontFamily="@font/montserrat"/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>

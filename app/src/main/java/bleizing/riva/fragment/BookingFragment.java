@@ -432,7 +432,7 @@ public class BookingFragment extends Fragment {
                 // TODO: MASUKIN DATA YANG VALID!
                 pars.put("id_perawat", "");
                 pars.put("alamat", lokasi);
-                pars.put("id_user", "1");
+                pars.put("id_user", String.valueOf(Model.getId()));
                 pars.put("lat", "-6.35345");
                 pars.put("lng", "106.34535354");
 

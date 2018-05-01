@@ -338,7 +338,7 @@ public class RegistrasiFragment extends Fragment {
                 pars.put("no_telp", no_telp);
                 pars.put("waktu_kunjungan", waktu_kunjungan);
                 pars.put("email", email);
-                pars.put("id_user", "1");
+                pars.put("id_user", String.valueOf(Model.getId()));
                 pars.put("no_mr", "");
 
                 Log.wtf(TAG, "pars = " + pars.toString());

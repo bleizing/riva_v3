@@ -12,4 +12,5 @@ public class NETApi {
     public static final String POST_HOMECARE = "booking/homecare";
     public static final String POST_BOOKING = "booking/unit";
     public static final String GET_ARTICLE = "artikel?rqid=" + NETApi.RQID;
+    public static final String REGISTRASI = "user/registrasi";
 }
